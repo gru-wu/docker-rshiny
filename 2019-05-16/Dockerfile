@@ -42,9 +42,9 @@ RUN apt-get update \
     DT \
     BAMMtools \
     ggseas \
-	TTR \
-	rhandsontable \
-	leaflet.extras
+    TTR \
+    rhandsontable \
+    leaflet.extras
 
 # Copy configuration files into the Docker image
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
