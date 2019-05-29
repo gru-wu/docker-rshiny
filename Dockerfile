@@ -1,5 +1,5 @@
 # Get shiny server with tidyverse installed already
-FROM rocker/shiny-verse:3.5.2
+FROM rocker/shiny-verse:3.5.3
 
 # Install a few dependencies for packages
 RUN apt-get update \
@@ -50,7 +50,7 @@ RUN apt-get update \
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
 
 # install plotly version 4.9
-RUN R -e "install.packages('https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz', repos = NULL)" 
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz', repos = NULL)"
 
 # Make the ShinyApp available at port 80
 EXPOSE 80
