@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  app:
+    container_name: test
+    build:
+      context: ../
+    restart: always
+    ports:
+      - "83:80"
+    volumes:
+      - ./app:/srv/shiny-server
