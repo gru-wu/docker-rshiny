@@ -50,3 +50,8 @@ Alternatively, or if you need a specific version or a GitHub package, you can ad
 # install plotly version 4.9
 RUN R -e "install.packages('https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz', repos = NULL)"
 ```
+
+### Test any changes
+Navigate to the `test_app` directory, then type `docker-compose up -d`. This builds the `app` inside the `test_app` folder with every docker-setup in the directory. With that you can test compatibility of your app with new versions or also older versions, other R versions or package versions, etc.
+
+The apps will be deployed between the ports `:80` (build in the main directory), `:81` (2019-04-02 version) and `:84` (2019-05-28 version).

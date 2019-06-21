@@ -1,11 +1,48 @@
 version: "3.5"
 services:
   app:
-    container_name: test
+    container_name: test_main
     build:
       context: ../
-    # restart: always
+    restart: always
     ports:
       - 80:80
     volumes:
       - ./app:/srv/shiny-server
+  app20190402:
+    container_name: test20190402
+    build:
+      context: ../2019-04-02/
+    restart: always
+    ports:
+      - 81:80
+    volumes:
+      - ./app:/srv/shiny-server
+  app20190410:
+    container_name: test20190410
+    build:
+      context: ../2019-04-10/
+    restart: always
+    ports:
+      - 82:80
+    volumes:
+      - ./app:/srv/shiny-server
+  app20190416:
+    container_name: test20190416
+    build:
+      context: ../2019-04-16/
+    restart: always
+    ports:
+      - 83:80
+    volumes:
+      - ./app:/srv/shiny-server
+  app20190528:
+    container_name: test20190528
+    build:
+      context: ../2019-05-28/
+    restart: always
+    ports:
+      - 84:80
+    volumes:
+      - ./app:/srv/shiny-server
+
