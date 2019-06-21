@@ -30,3 +30,23 @@ services:
     build:
       context: ./docker-rshiny/
 ```
+
+## How to adjust it?
+The most common use case will be that you need to [add or remove a package dependency](#add-or-remove-a-package-dependency). If you can think of anything else that might be of use, open an issue.
+
+### Add or remove a package dependency
+For this, you just add your desired package at the end of the additions to ` && install2.r --error \`, where there is no `\` anymore (e.g. after `leaflet.extras`). Or, in case you want to delete it, you remove the line of the package that you do not need.
+
+```Dockerfile
+&& install2.r --error \
+  ...
+  leaflet.extras \
+  the_cran_package_i_need
+```
+
+Alternatively, or if you need a specific version or a GitHub package, you can add the following:
+
+```Dockerfile
+# install plotly version 4.9
+RUN R -e "install.packages('https://cran.r-project.org/src/contrib/plotly_4.9.0.tar.gz', repos = NULL)"
+```
